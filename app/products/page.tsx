@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default async function ProductsPage() {
-  const baseUrl = 'http://localhost:3000';
+  console.log(process.env.NEXT_PUBLIC_APP_URL);
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL;
   let clientes = [];
   try {
     const response = await fetch(`${baseUrl}/api/products`, {
